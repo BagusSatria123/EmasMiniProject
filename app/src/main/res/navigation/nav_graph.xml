@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/frontFragment">
+
+    <fragment
+        android:id="@+id/frontFragment"
+        android:name="id.putraprima.mygoldtracker.screen.front.FrontFragment"
+        android:label="fragment_front"
+        tools:layout="@layout/fragment_front">
+        <action
+            android:id="@+id/action_frontFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="id.putraprima.mygoldtracker.screen.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_frontFragment"
+            app:destination="@id/frontFragment" />
+        <argument
+            android:name="profile"
+            app:argType="id.putraprima.mygoldtracker.models.Profile" />
+    </fragment>
+</navigation>
